@@ -1,6 +1,7 @@
 {
   "name": "banquidle-bot",
   "version": "1.0.0",
+  "type": "module",
   "description": "Discord bot to launch the Banquidle custom activity.",
   "main": "index.js",
   "scripts": {
