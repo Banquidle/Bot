@@ -9,8 +9,8 @@ export const CONFIG = {
     GUILD_ID: process.env.GUILD_ID,
     VOICE_CHANNEL_ID: process.env.VOICE_CHANNEL_ID,
     TEXT_CHANNEL_ID: process.env.TEXT_CHANNEL_ID,
-    STORAGE_FILE: path.resolve('daily_players.json'),
-    PATCH_NOTES_DIR: path.resolve('patches'),
+    STORAGE_FILE: path.resolve('res/daily_players.json'),
+    PATCH_NOTES_DIR: path.resolve('res/patches'),
     CRON_SCHEDULE: '55 09 * * *',
     TIMEZONE: 'Europe/Paris'
 }
