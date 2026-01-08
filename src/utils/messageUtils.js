@@ -2,11 +2,6 @@ import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js'
 import { CONFIG } from '../config.js'
 
 export async function sendBanquidleInvite(client, targetMessage = null, extraContent = "") {
-    if (!CONFIG.ACTIVITY_ID) {
-        console.error("ACTIVITY_ID is missing in env.")
-        return
-    }
-
     try {
         const startButton = new ButtonBuilder()
             .setCustomId('start_banquidle')

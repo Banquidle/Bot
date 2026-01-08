@@ -25,7 +25,6 @@ export async function popDailyPlayers() {
         const data = await fs.readFile(CONFIG.STORAGE_FILE, 'utf-8')
         const players = JSON.parse(data)
         
-        // Reset file
         await fs.writeFile(CONFIG.STORAGE_FILE, JSON.stringify([]))
         
         return players

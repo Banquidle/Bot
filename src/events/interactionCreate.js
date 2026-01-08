@@ -2,10 +2,9 @@ import { Routes } from 'discord.js'
 import { trackPlayer } from '../services/playerService.js'
 
 export async function handleInteractionCreate(interaction, client) {
-    const isPlayCommand = interaction.isChatInputCommand() && interaction.commandName === 'play'
     const isStartButton = interaction.isButton() && interaction.customId === 'start_banquidle'
 
-    if (isPlayCommand || isStartButton) {
+    if (isStartButton) {
         try {
             console.log(`[Interaction] User ${interaction.user.tag} started the activity.`)
             await trackPlayer(interaction.user.id)
