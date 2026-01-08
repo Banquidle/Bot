@@ -10,6 +10,6 @@ export const CONFIG = {
     TEXT_CHANNEL_ID: process.env.TEXT_CHANNEL_ID,
     STORAGE_FILE: path.resolve('res/daily_players.json'),
     PATCH_NOTES_DIR: path.resolve('res/patches'),
-    CRON_SCHEDULE: '55 09 * * *',
+    CRON_SCHEDULE: '45 09 * * *',
     TIMEZONE: 'Europe/Paris'
 }
