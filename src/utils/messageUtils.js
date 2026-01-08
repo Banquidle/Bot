@@ -1,4 +1,4 @@
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, InviteTargetType } from 'discord.js'
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js'
 import { CONFIG } from '../config.js'
 
 export async function sendBanquidleInvite(client, targetMessage = null, extraContent = "") {
@@ -8,23 +8,10 @@ export async function sendBanquidleInvite(client, targetMessage = null, extraCon
     }
 
     try {
-        const guild = await client.guilds.fetch(CONFIG.GUILD_ID)
-        const voiceChannel = guild.channels.cache.get(CONFIG.VOICE_CHANNEL_ID)
-
-        if (!voiceChannel) {
-            console.error("Voice channel not found.")
-            return
-        }
-
-        const invite = await voiceChannel.createInvite({
-            targetType: InviteTargetType.EmbeddedApplication,
-            targetApplication: CONFIG.ACTIVITY_ID
-        })
-
         const startButton = new ButtonBuilder()
+            .setCustomId('start_banquidle')
             .setLabel('Start Banquidle')
-            .setStyle(ButtonStyle.Link)
-            .setURL(invite.url)
+            .setStyle(ButtonStyle.Success)
 
         const row = new ActionRowBuilder().addComponents(startButton)
 
@@ -36,6 +23,7 @@ export async function sendBanquidleInvite(client, targetMessage = null, extraCon
         if (targetMessage) {
             await targetMessage.reply(payload)
         } else {
+            const guild = await client.guilds.fetch(CONFIG.GUILD_ID)
             const textChannel = guild.channels.cache.get(CONFIG.TEXT_CHANNEL_ID)
             if (textChannel?.isTextBased()) {
                 await textChannel.send(payload)
