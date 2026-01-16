@@ -1,5 +1,5 @@
-import { sendBanquidleInvite } from '../utils/messageUtils.js'
-import { getLatestPatchNote } from '../services/patchesService.js'
+import {sendBanquidleInvite} from '../utils/messageUtils.js'
+import {getLatestPatchNote} from '../services/patchesService.js'
 
 export async function handleMessageCreate(message, client) {
     if (message.author.bot) return

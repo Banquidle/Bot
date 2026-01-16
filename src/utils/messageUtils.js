@@ -11,7 +11,7 @@ export async function sendBanquidleInvite(client, targetMessage = null, extraCon
         const row = new ActionRowBuilder().addComponents(startButton)
 
         const payload = {
-            content: `Rejoins le **Banquidle** du jour !${extraContent}`,
+            content: `${extraContent}Rejoins le **Banquidle** du jour !`,
             components: [row]
         }
 
